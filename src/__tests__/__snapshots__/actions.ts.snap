@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`core actions add to cart action 1`] = `
+Object {
+  "amount": 2,
+  "id": 3,
+  "stonk": Object {
+    "amount": 2,
+    "description": "floopderop",
+    "id": 1,
+    "name": "floop",
+    "pathToImage": "https://",
+    "price": 101,
+    "selected": false,
+    "sellAmount": 1,
+  },
+  "type": "ADD_TO_CART",
+}
+`;
+
+exports[`core actions buy stonks action 1`] = `
+Object {
+  "type": "BUY_STONKS",
+}
+`;
+
+exports[`core actions change amount cart action 1`] = `
+Object {
+  "amount": 3,
+  "index": 20,
+  "type": "CHANGE_AMOUNT_CART",
+}
+`;
+
+exports[`core actions change amount inventory action 1`] = `
+Object {
+  "amount": 4,
+  "index": 40,
+  "type": "CHANGE_AMOUNT_INVENTORY",
+}
+`;
+
+exports[`core actions change amount shop action 1`] = `
+Object {
+  "amount": 3,
+  "index": 2,
+  "type": "CHANGE_AMOUNT_SHOP",
+}
+`;
+
+exports[`core actions openSnackbar/closeSnackbar action 1`] = `
+Object {
+  "message": "msg",
+  "type": "OPEN_SNACKBAR",
+  "variant": "success",
+}
+`;
+
+exports[`core actions openSnackbar/closeSnackbar action 2`] = `
+Object {
+  "type": "CLOSE_SNACKBAR",
+}
+`;
+
+exports[`core actions removeStonk action 1`] = `
+Object {
+  "index": 45,
+  "type": "REMOVE_STONK",
+}
+`;
+
+exports[`core actions selectAllCart/selectAllInventorys 1`] = `
+Object {
+  "type": "SELECT_ALL_CART",
+}
+`;
+
+exports[`core actions selectAllCart/selectAllInventorys 2`] = `
+Object {
+  "type": "SELECT_ALL_INVENTORY",
+}
+`;
+
+exports[`core actions selectStonkInInventory/selectStonkInCart action 1`] = `
+Object {
+  "index": 3,
+  "type": "SELECT_STONK_IN_INVENTORY",
+}
+`;
+
+exports[`core actions selectStonkInInventory/selectStonkInCart action 2`] = `
+Object {
+  "index": 4,
+  "type": "SELECT_STONK_IN_CART",
+}
+`;
+
+exports[`core actions sell stonks action 1`] = `[Function]`;
+
+exports[`core actions unSelectAllInventory/unSelectAllCart 1`] = `
+Object {
+  "type": "UNSELECT_ALL_INVENTORY",
+}
+`;
+
+exports[`core actions unSelectAllInventory/unSelectAllCart 2`] = `
+Object {
+  "type": "SELECT_ALL_CART",
+}
+`;
