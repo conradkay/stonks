@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index renders correctly 1`] = `
+<div>
+  <div>
+    <div
+      className="HeaderComp-root-2"
+    >
+      <header
+        className="MuiPaper-root-14 MuiPaper-elevation4-20 MuiAppBar-root-6 MuiAppBar-positionFixed-7 MuiAppBar-colorPrimary-12 mui-fixed"
+      >
+        <div
+          className="MuiToolbar-root-41 MuiToolbar-regular-43"
+        >
+          <a
+            className="HeaderComp-link-3"
+            href="/"
+            onClick={[Function]}
+            style={
+              Object {
+                "textDecoration": "underline",
+              }
+            }
+          >
+            Home
+          </a>
+          <a
+            className="HeaderComp-link-3"
+            href="/shop"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Shop
+          </a>
+          <a
+            className="HeaderComp-link-3"
+            href="/contact"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Contact
+          </a>
+          <a
+            className="HeaderComp-link-3"
+            href="/inventory"
+            onClick={[Function]}
+            style={Object {}}
+          >
+            Inventory
+          </a>
+          <a
+            className="HeaderComp-link-3"
+            href="/cart"
+            onClick={[Function]}
+          >
+            <span
+              aria-describedby={null}
+              className="MuiBadge-root-52"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              onTouchEnd={[Function]}
+              onTouchStart={[Function]}
+              title="cart, items: 3"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-57"
+                color={undefined}
+                focusable="false"
+                style={Object {}}
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+              <span
+                className="MuiBadge-badge-53 HeaderComp-badge-4 MuiBadge-colorPrimary-54"
+              >
+                3
+              </span>
+            </span>
+          </a>
+          <h2
+            className="HeaderComp-link-3"
+          >
+            $
+            1000
+          </h2>
+        </div>
+      </header>
+    </div>
+    <div
+      className="HomeComponent-root-1"
+    >
+      <p
+        className="MuiTypography-root-64 MuiTypography-body1-73"
+        style={
+          Object {
+            "fontSize": 24,
+          }
+        }
+      >
+        Hello, and welcome to the world of stonks. The stonk universe is an alternate reality set in a world where the Soviet Union never collapsed. Engladesh(the name of the new Soviet Union) later took  control of most of asia and is in a war against the United Capitalist Scum(UCS) Comprised of the USA, Scandinavia, Australia, and Uruguay pot bois(UPB). The Soviet Union(renamed Englandesh to make them think we are english capitalist men but in asia), was taken control by a me, so I made a system where we distrubuted STONKS(S-uper, C-ool, K-ids, W-ho, D-o, M-emes) was designed to be a new HIP, COOL, and FLOOPIN way of rationing the "DO NOT EAT" packets you find in beef jerky, stonks, of course, control a part of the economy in a certain aspect, for example, the cheese stonk regulates .001% of the cheese production and exportation. Some stonks are awarded to regular citizens that do good work for communism, (or sabotaging capitalists), also, BAMBOOZLIN anyone leads for massive stonks, which is why you will be bamboozlined if you aren't carefull, by the way, YOU will not be receiving goverment stonks because we see your browsing history.
+      </p>
+    </div>
+    <h3 />
+  </div>
+</div>
+`;
