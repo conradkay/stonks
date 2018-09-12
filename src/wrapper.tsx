@@ -19,7 +19,7 @@ const Wrapper = () => {
   <Provider store={store}>
     <div>
       <SnackbarWrap />
-      <Router /*basename="/stonk*/>
+      <Router basename="/stonk">
         <Switch>
           <Route exact={true} path={'/'} render={() => <Home />}/>
           <Route path={'/cart/'} render={() => <Cart />}/>

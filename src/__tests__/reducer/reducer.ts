@@ -1,10 +1,9 @@
 // hello mate, this is the dev branch
-import { reducer } from '../reducers/root'
-import { defaultState, exampleStonk } from '../utils'
-import * as actions from '../actions'
-import { addToCart } from '../reducers/addToCart'
+import { Stonk, reducer } from 'src/exports'
+import { defaultState, exampleStonk } from 'src/utils'
+import * as actions from 'src/actions'
+import { addToCart } from '../../reducers/addToCart'
 import { createStore } from 'redux'
-import { Stonk } from '../exports'
 const store = createStore(reducer, defaultState)
 beforeEach(() => {
   store.dispatch({ type: 'RESET' })
