@@ -8,7 +8,7 @@ import {
   Theme, withStyles, WithStyles, createStyles, Paper, Table, TableBody, TableCell, TableRow, Checkbox, TextField, Button
 } from '@material-ui/core'
 import { connect } from 'react-redux'
-import { Title } from 'src/cart/tableTitle'
+import { Title } from '../cart/tableTitle'
 
 const styles = (theme: Theme) => createStyles({
   textField: {
@@ -51,37 +51,37 @@ export class InventoryComponent extends Component<Props> {
           <Paper className={classes.root}>
             <Table className={classes.table}>
               <Title selectAll={this.props.selectAllInventory} unSelectAll={this.props.unSelectAllInventory} />
-                <TableBody>
-                 {inventory.map((stonk: Stonk) => {
-                   return (
-                     <TableRow key={stonk.id}>
-                       <TableCell>
-                         <Checkbox
-                           checked={stonk.selected}
-                           onChange={() => this.props.selectStonkInInventory(this.props.inventory.indexOf(stonk))}
-                         />
-                        </TableCell>
-                        <TableCell component="th" scope="stonk">{stonk.name}</TableCell>
-                        <TableCell>{stonk.description}</TableCell>
-                        <TableCell>{stonk.amount}</TableCell>
-                        <TableCell numeric={true}>${stonk.price}</TableCell>
-                        <TableCell numeric={true}>
-                        <TextField
-                          type="number"
-                          id="number"
-                          value={stonk.sellAmount}
-                          onChange={this.props.handleChange(inventory.indexOf(stonk))}
-                        />
+              <TableBody>
+               {inventory.map((stonk: Stonk) => {
+                 return (
+                   <TableRow key={stonk.id}>
+                     <TableCell>
+                       <Checkbox
+                         checked={stonk.selected}
+                         onChange={() => this.props.selectStonkInInventory(this.props.inventory.indexOf(stonk))}
+                       />
                       </TableCell>
-                    </TableRow>
-                  )
-                })}
-              </TableBody>
-            </Table>
-          </Paper>
-          <Button className={classes.button} onClick={this.props.sellStonks} variant="contained" color="secondary">
-            sell stonks
-          </Button>
+                      <TableCell component="th" scope="stonk">{stonk.name}</TableCell>
+                      <TableCell>{stonk.description}</TableCell>
+                      <TableCell>{stonk.amount}</TableCell>
+                      <TableCell numeric={true}>${stonk.price}</TableCell>
+                      <TableCell numeric={true}>
+                      <TextField
+                        type="number"
+                        id="number"
+                        value={stonk.sellAmount}
+                        onChange={this.props.handleChange(inventory.indexOf(stonk))}
+                      />
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </Table>
+        </Paper>
+        <Button className={classes.button} onClick={this.props.sellStonks} variant="contained" color="secondary">
+          sell stonks
+        </Button>
         <Footer />
       </div>
     )
