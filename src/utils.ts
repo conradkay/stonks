@@ -11,7 +11,7 @@ export const getStylesHeader = (conditionTrue: boolean): { textDecoration: 'unde
   }
 }
 // used as parent: [...itemBetweenIndexes(state.parent, 3, {})]
-export const itemBetweenIndexes = (parent: any, index: number, newItem: any) => {
+export const itemBetweenIndexes = (parent: Array<any>, index: number, newItem: any) => {
   return [...parent.slice(0, index), newItem, ...parent.slice(index + 1)]
 }
 
@@ -30,9 +30,9 @@ export const getClassSnackbarVariant = (variant: Variant, classes: { success: st
     return classes.error
   }
 }
-const generateOnes = (amount: number): number[] => { // generates some ones to put into state.shopAmounts
+export const generateOnes = (amount: number): number[] => { // generates some ones to put into state.shopAmounts
   const arr = [1]
-  for (let i = 0; i < amount; i++) {
+  for (let i = 0; i < amount - 1; i++) {
     arr.push(1)
   }
   return arr

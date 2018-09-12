@@ -1,7 +1,6 @@
-// hello mate, this is the dev branch
-import { Stonk, reducer } from 'src/exports'
-import { defaultState, exampleStonk } from 'src/utils'
-import * as actions from 'src/actions'
+import { Stonk, reducer } from '../../exports'
+import { defaultState, exampleStonk } from '../../utils'
+import * as actions from '../../actions'
 import { addToCart } from '../../reducers/addToCart'
 import { createStore } from 'redux'
 const store = createStore(reducer, defaultState)
