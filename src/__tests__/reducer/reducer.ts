@@ -28,6 +28,17 @@ describe('reducer', () => {
     expect(store.getState().cart).toEqual(expected)
     expect(addToCart({ ...defaultState, cart: [] }, { ...actions.addToCart(stonk, 11), id: 1 }).cart).toEqual([{ ...stonk, id: 1 }])
   })
+  it('should select-unselect some stonks in cart/inventory', () => {
+    store.dispatch(actions.selectStonkInCart(1))
+    expect(store.getState().cart[1].selected).toBe(true)
+    store.dispatch(actions.selectStonkInCart(1))
+    expect(store.getState().cart[1].selected).toBe(false)
+    store.dispatch(actions.selectStonkInInventory(0))
+    expect(store.getState().inventory[0].selected).toBe(true)
+    store.dispatch(actions.selectStonkInInventory(0))
+    expect(store.getState().inventory[0].selected).toBe(false)
+
+  })
   it('should buy stonks', () => {
 
   })
@@ -35,13 +46,24 @@ describe('reducer', () => {
 
   })
   it('should change amount in shop/cart/inventory', () => {
-
+    store.dispatch(actions.changeAmountCart(10, 0))
+    expect(store.getState().cart[0].amount).toBe(10)
+    store.dispatch(actions.changeAmountInventory(10, 0))
+    expect(store.getState().inventory[0].sellAmount).toBe(10)
+    store.dispatch(actions.changeAmountShop(10, 2))
+    expect(store.getState().amountStonksShop[2]).toBe(10)
   })
-  it('should select stonk in shop/cart/inventory', () => {
-
-  })
-  it('should select all in shop/cart/inventory', () => {
-
+  it('should select all in cart/inventory', () => {
+    const expectedCart = store.getState().cart.map((stonk: Stonk) => {
+      return { ...stonk, selected: true }
+    })
+    const expectedInventory = store.getState().inventory.map((stonk: Stonk) => {
+      return { ...stonk, selected: true }
+    })
+    store.dispatch(actions.selectAllCart())
+    store.dispatch(actions.selectAllInventory())
+    expect(store.getState().cart).toEqual(expectedCart)
+    expect(store.getState().cart).toEqual(expectedInventory)
   })
   it('should unselect all in cart/inventory', () => {
     const expectedCart = store.getState().cart.map((stonk: Stonk) => {

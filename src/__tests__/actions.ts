@@ -2,7 +2,7 @@ import * as actions from '../actions'
 import { exampleStonk } from '../utils'
 describe('core actions', () => {
   it('add to cart action', () => {
-    expect(actions.addToCart(exampleStonk, 2).id.toString().length).toBeGreaterThanOrEqual(10)
+    expect(actions.addToCart(exampleStonk, 2).id.toString().length).toBeGreaterThanOrEqual(9)
     expect({ ...actions.addToCart(exampleStonk, 2), id: 3 }).toMatchSnapshot()
   })
   it('buy stonks action', () => expect(actions.buyStonks()).toMatchSnapshot())

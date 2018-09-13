@@ -1,5 +1,5 @@
-import { getStylesHeader, itemBetweenIndexes, getClassSnackbarVariant, generateOnes } from '../utils'
-
+import { getStylesHeader, itemBetweenIndexes, getClassSnackbarVariant, generateOnes, defaultState, exampleStonk } from '../utils'
+import { stonks } from '../exports'
 describe('util functions', () => {
   test('getStylesHeader', () => {
     expect(getStylesHeader(true)).toEqual({ textDecoration: 'underline' })
@@ -19,5 +19,19 @@ describe('util functions', () => {
   })
   test('generate ones :( such a sad function', () => {
     expect(generateOnes(10)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+  })
+  test('defaultState', () => {
+    expect(defaultState.amountStonksShop.length).toBe(25)
+    expect(defaultState).toEqual({
+      amountStonksShop: generateOnes(25),
+      cart: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
+      inventory: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
+      activeFilters: [],
+      money: 1000,
+      snackbar: { open: false, message: 'dont show', variant: 'success' },
+    })
+  })
+  test('exampleStonk', () => {
+    expect(exampleStonk).toEqual({ amount: 2, id: 1, description: 'floopderop', price: 101, name: 'floop', pathToImage: 'https://', sellAmount: 1, selected: false })
   })
 })

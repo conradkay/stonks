@@ -11,7 +11,7 @@ export const getStylesHeader = (conditionTrue: boolean): { textDecoration: 'unde
   }
 }
 // used as parent: [...itemBetweenIndexes(state.parent, 3, {})]
-export const itemBetweenIndexes = (parent: Array<any>, index: number, newItem: any) => {
+export const itemBetweenIndexes = (parent: any[], index: number, newItem: any) => {
   return [...parent.slice(0, index), newItem, ...parent.slice(index + 1)]
 }
 
