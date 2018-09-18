@@ -17,18 +17,10 @@ export const itemBetweenIndexes = (parent: any[], index: number, newItem: any) =
 
 export const getClassSnackbarVariant = (variant: Variant, classes: { success: string; warning: string; error: string }) => {
   // function to bypass rules on typescript [] notation, used in snackbarWrap component
-  if (variant === 'success') {
-    return classes.success
-  }
-  else if (variant === 'warning') {
-    return classes.warning
-  }
-  else if (variant === 'error') {
-    return classes.error
-  }
-  else {
-    return classes.error
-  }
+  if (variant === 'success') return classes.success
+  else if (variant === 'warning') return classes.warning
+  else if (variant === 'error') return classes.error
+  else return classes.error
 }
 export const generateOnes = (amount: number): number[] => { // generates some ones to put into state.shopAmounts
   const arr = [1]

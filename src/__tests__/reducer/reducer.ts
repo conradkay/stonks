@@ -1,7 +1,6 @@
 import { Stonk, reducer } from '../../exports'
 import { defaultState, exampleStonk } from '../../utils'
 import * as actions from '../../actions'
-import { addToCart } from '../../reducers/addToCart'
 import { createStore } from 'redux'
 const store = createStore(reducer, defaultState)
 beforeEach(() => {
@@ -26,7 +25,6 @@ describe('reducer', () => {
       stonk
     ]
     expect(store.getState().cart).toEqual(expected)
-    expect(addToCart({ ...defaultState, cart: [] }, { ...actions.addToCart(stonk, 11), id: 1 }).cart).toEqual([{ ...stonk, id: 1 }])
   })
   it('should select-unselect some stonks in cart/inventory', () => {
     store.dispatch(actions.selectStonkInCart(1))
@@ -48,8 +46,15 @@ describe('reducer', () => {
   it('should change amount in shop/cart/inventory', () => {
     store.dispatch(actions.changeAmountCart(10, 0))
     expect(store.getState().cart[0].amount).toBe(10)
-    store.dispatch(actions.changeAmountInventory(10, 0))
-    expect(store.getState().inventory[0].sellAmount).toBe(10)
+    // expect changing this value above amount to not do anything and to trigger snackbar warning
+    store.dispatch(actions.changeAmountInventory(2, 0))
+    expect(store.getState().inventory[0].sellAmount).toBe(1)
+    expect(store.getState().snackbar).toEqual({ message: 'you do not have this many stonks', open: true, variant: 'warning' })
+
+    store.dispatch({ type: 'SET_STATE_TEST', newState: { ...defaultState, inventory: [{ ...defaultState.inventory[1], amount: 8 }, ...defaultState.inventory.slice(1)] } })
+    store.dispatch(actions.changeAmountInventory(8, 0))
+    expect(store.getState().inventory[0].sellAmount).toBe(8)
+
     store.dispatch(actions.changeAmountShop(10, 2))
     expect(store.getState().amountStonksShop[2]).toBe(10)
   })
@@ -91,5 +96,9 @@ describe('reducer', () => {
   it('should return state when action is invalid', () => {
     store.dispatch({ type: 'floop' })
     expect(store.getState()).toEqual(defaultState)
+  })
+  it('should allow setting state badly for testing', () => {
+    store.dispatch({ type: 'SET_STATE_TEST', newState: { ...defaultState, cart: [] } })
+    expect(store.getState()).toEqual({ ...defaultState, cart: [] })
   })
 })

@@ -19,7 +19,7 @@ export const rootReducer = (state: State = defaultState, action: Action): State 
     case 'SELL_STONKS':
       return sellStonks(state, action)
     case 'CHANGE_AMOUNT_INVENTORY':
-      console.log('heya')
+      // if user has enough stonks to sell, then allow them to increment
       if (action.amount <= state.inventory[action.index].amount) {
         return {
           ...state,
