@@ -38,10 +38,38 @@ describe('reducer', () => {
 
   })
   it('should buy stonks', () => {
-
+    store.dispatch(actions.selectStonkInCart(1)) // make it buyable
+    store.dispatch(actions.selectStonkInCart(defaultState.cart.length - 1)) // make last one NOT buyable
+    const expectedMoney: number = store.getState().money - (defaultState.cart[1].price * defaultState.cart[1].amount)
+    const expectedInventory: Stonk[] = [
+      ...defaultState.inventory.slice(0, 1),
+      { ...defaultState.cart[1], amount: 2, sellAmount: 2 },
+      ...defaultState.inventory.slice(2)
+    ]
+    const expectedCart: Stonk[] = [
+      ...defaultState.cart.slice(0, 1),
+      ...defaultState.cart.slice(2, defaultState.cart.length - 1),
+      { ...defaultState.cart[defaultState.cart.length - 1], selected: false }
+    ]
+    store.dispatch(actions.buyStonks())
+    expect(store.getState().money).toEqual(expectedMoney)
+    expect(store.getState().inventory).toEqual(expectedInventory)
+    expect(store.getState().cart).toEqual(expectedCart)
   })
   it('should sell stonks', () => {
-
+    const index: number = defaultState.inventory.length - 1
+    const expectedMoney: number = store.getState().money + (defaultState.inventory[1].price * defaultState.inventory[1].amount)
+    const expectedInventory = [
+      ...defaultState.inventory.slice(0, 1),
+      // leave out second item, as we sell this
+      ...defaultState.inventory.slice(2)
+    ]
+    store.dispatch(actions.selectStonkInInventory(1))
+    store.dispatch(actions.selectStonkInInventory(index)) // dont sell last one that is auto selected
+    store.dispatch(actions.sellStonks())
+    store.dispatch(actions.selectStonkInInventory(index - 1)) // once again select last one so state matches
+    expect(store.getState().money).toBe(expectedMoney)
+    expect(store.getState().inventory).toEqual(expectedInventory)
   })
   it('should change amount in shop/cart/inventory', () => {
     store.dispatch(actions.changeAmountCart(10, 0))

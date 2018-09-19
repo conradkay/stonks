@@ -69,10 +69,10 @@ export const rootReducer = (state: State = defaultState, action: Action): State 
         ]
       }
     case 'SET_STATE_TEST':
-      console.log('SETTING STATE BADLY IF NOT TESTING STAHP reducer last classes')
+      // console.log('SETTING STATE BADLY IF NOT TESTING STAHP reducer last classes')
       return action.newState
     case 'RESET':
-      return { ...defaultState }
+      return defaultState
     default:
       return state
   }

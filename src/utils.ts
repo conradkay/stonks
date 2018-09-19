@@ -7,7 +7,7 @@ export const getStylesHeader = (conditionTrue: boolean): { textDecoration: 'unde
     return { textDecoration: 'underline' }
   }
   else {
-    return {}
+    return {} // no styles
   }
 }
 // used as parent: [...itemBetweenIndexes(state.parent, 3, {})]
@@ -17,10 +17,10 @@ export const itemBetweenIndexes = (parent: any[], index: number, newItem: any) =
 
 export const getClassSnackbarVariant = (variant: Variant, classes: { success: string; warning: string; error: string }) => {
   // function to bypass rules on typescript [] notation, used in snackbarWrap component
-  if (variant === 'success') return classes.success
-  else if (variant === 'warning') return classes.warning
-  else if (variant === 'error') return classes.error
-  else return classes.error
+  if (variant === 'success') { return classes.success }
+  else if (variant === 'warning') { return classes.warning }
+  else if (variant === 'error') { return classes.error }
+  else { return classes.error }
 }
 export const generateOnes = (amount: number): number[] => { // generates some ones to put into state.shopAmounts
   const arr = [1]
@@ -52,4 +52,21 @@ export const exampleStonk: Stonk = {
   pathToImage: 'https://',
   sellAmount: 1,
   selected: false
+}
+// Takes whether stonks should be selected, and whether or not we are testing cart(if false then inventory)
+export const createExpected = (selected: boolean, cart: boolean) => {
+  if (cart) {
+    return {
+      ...defaultState,
+      cart: defaultState.cart.map((stonk: Stonk) => {
+        return { ...stonk, selected }
+      })
+    }
+  }
+  return {
+    ...defaultState,
+    inventory: defaultState.inventory.map((stonk: Stonk) => {
+      return { ...stonk, selected }
+    })
+  }
 }
