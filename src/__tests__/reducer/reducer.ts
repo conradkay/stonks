@@ -48,7 +48,7 @@ describe('reducer', () => {
     ]
     const expectedCart: Stonk[] = [
       ...defaultState.cart.slice(0, 1),
-      ...defaultState.cart.slice(2, defaultState.cart.length - 1),
+      ...defaultState.cart.slice(2, -1),
       { ...defaultState.cart[defaultState.cart.length - 1], selected: false }
     ]
     store.dispatch(actions.buyStonks())
