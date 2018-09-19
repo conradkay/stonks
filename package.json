@@ -81,11 +81,13 @@
     "eslint-plugin-react": "^7.11.0",
     "eslint-plugin-typescript": "^0.12.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.4.2",
+    "react-test-renderer": "^16.5.2",
     "redux-devtools-extension": "^2.13.5"
   },
   "jest": {
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],
