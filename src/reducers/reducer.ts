@@ -19,13 +19,19 @@ export const rootReducer = (state: State = defaultState, action: Action): State 
     case 'SELL_STONKS':
       return sellStonks(state, action)
     case 'CHANGE_AMOUNT_INVENTORY':
-      if (action.amount <= state.inventory[action.index].sellAmount) {
+      // if user has enough stonks to sell, then allow them to increment
+      if (action.amount <= state.inventory[action.index].amount) {
         return {
           ...state,
           inventory: [...itemBetweenIndexes(state.inventory, action.index, { ...state.inventory[action.index], sellAmount: action.amount })]
         }
       }
-      return state
+      return {
+        ...state,
+        snackbar: {
+          variant: 'warning', open: true, message: 'you do not have this many stonks'
+        }
+      }
     case 'CHANGE_AMOUNT_SHOP': // used in shot to see how much to add to cart
       return {
         ...state,
@@ -63,10 +69,10 @@ export const rootReducer = (state: State = defaultState, action: Action): State 
         ]
       }
     case 'SET_STATE_TEST':
-      console.log('SETTING STATE BADLY IF NOT TESTING STAHP reducer last classes')
+      // console.log('SETTING STATE BADLY IF NOT TESTING STAHP reducer last classes')
       return action.newState
     case 'RESET':
-      return { ...defaultState }
+      return defaultState
     default:
       return state
   }

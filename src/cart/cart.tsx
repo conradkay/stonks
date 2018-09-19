@@ -23,6 +23,7 @@ const styles = (theme: Theme) => createStyles({
   button: { marginTop: '1%' },
   table: { minWidth: 30 }
 })
+
 interface Props extends WithStyles<typeof styles> {
   handleChange: (value: number) => (event: any) => void
   buyStonks: () => void
