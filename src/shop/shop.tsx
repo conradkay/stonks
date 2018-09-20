@@ -34,10 +34,13 @@ interface Props extends WithStyles<typeof styles> {
 *   addToCart: calls function to add stonk to cart: (stonk, amount)
 * }
 * @RenderPoint: Rendered when at /stonk/home by index.Provider.Router.Switch.Route(/home/)
-* @Comments: None */
-export class ShopComponent extends Component<Props> {
+* @Comments: Uses tabs */
+export class ShopComponent extends Component<Props, {value: number}> {
   constructor(props: Props) {
     super(props)
+  }
+  state = {
+    value: 1
   }
   render() {
     const { classes, state, handleChange } = this.props
@@ -47,7 +50,7 @@ export class ShopComponent extends Component<Props> {
         <Grid container={true} spacing={8} alignItems={'center'}>
           {stonks.map((stonk: Stonk) => {
             return (
-              <Grid key={stonk.id} item={true} xs={3}>
+              <Grid key={stonk.id} item={true} xs={3}> {/* item, not parent */}
                 <Card className={classes.paper}>
                   <CardActionArea>
                     <CardMedia
@@ -55,7 +58,6 @@ export class ShopComponent extends Component<Props> {
                       title={stonk.name}
                       image={stonk.pathToImage}
                     />
-
                     <CardContent>
                       <Typography gutterBottom={true} variant="headline" component="h2">{stonk.name}</Typography>
                       <Typography component="p">{stonk.description}</Typography>
