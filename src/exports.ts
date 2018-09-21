@@ -8,7 +8,7 @@ export {
   unSelectAllInventory, selectAllInventory, sellStonks, changeAmountInventory, changeAmountShop
 } from './actions'
 export { Home } from './home/home'
-export { getClassSnackbarVariant, defaultState, itemBetweenIndexes, getStylesHeader, createExpected } from './utils'
+export { getClassSnackbarVariant, defaultState, itemBetweenIndexes, getStylesHeader, generateNum, createExpected } from './utils'
 export { SnackbarWrap } from './allPage/snackbarWrap'
 export { Shop } from './shop/shop'
 export { Cart } from './cart/cart'

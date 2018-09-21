@@ -17,6 +17,7 @@ export type Action = Readonly<{ type: 'ADD_TO_CART'; stonk: Stonk; id: number; a
   | { type: 'RESET' }>
 export { Dispatch } from 'redux'
 export interface Stonk {
+  readonly prices: Array<{ date: string; price: number }>
   readonly pathToImage: string
   readonly sellAmount: number
   readonly amount: number

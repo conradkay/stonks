@@ -1,4 +1,4 @@
-import { getStylesHeader, itemBetweenIndexes, getClassSnackbarVariant, generateOnes, defaultState, exampleStonk } from '../utils'
+import { getStylesHeader, itemBetweenIndexes, getClassSnackbarVariant, generateNum, defaultState, exampleStonk } from '../utils'
 import { stonks } from '../exports'
 describe('util functions', () => {
   it('getStylesHeader', () => {
@@ -18,12 +18,12 @@ describe('util functions', () => {
     // expect(getClassSnackbarVariant('hey', classes)).toBe('error') // works
   })
   it('generate ones :( such a sad function', () => {
-    expect(generateOnes(10)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+    expect(generateNum(10, 1)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
   })
   it('defaultState', () => {
     expect(defaultState.amountStonksShop.length).toBe(25)
     expect(defaultState).toEqual({
-      amountStonksShop: generateOnes(25),
+      amountStonksShop: generateNum(25, 1),
       cart: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
       inventory: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
       activeFilters: [],
