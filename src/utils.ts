@@ -30,7 +30,7 @@ export const generateNum = (amount: number, num: number): number[] => { // gener
   return arr
 }
 export const defaultState: State = {
-  amountStonksShop: generateNum(25, 1), // This is SO sad
+  amountStonksShop: generateNum(stonks.length, 1), // This is SO sad
   cart: [
     ...stonks.slice(0, -1),
     { ...stonks[stonks.length - 1], selected: true }
