@@ -38,6 +38,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^1.1.4",
+    "react-vis": "^1.11.2",
     "redux": "^4.0.0",
     "resolve": "1.6.0",
     "source-map-loader": "^0.2.1",
@@ -81,11 +82,13 @@
     "eslint-plugin-react": "^7.11.0",
     "eslint-plugin-typescript": "^0.12.0",
     "react-addons-test-utils": "^15.6.2",
-    "react-test-renderer": "^16.4.2",
+    "react-test-renderer": "^16.5.2",
     "redux-devtools-extension": "^2.13.5"
   },
   "jest": {
-    "moduleDirectories": ["node_modules"],
+    "moduleDirectories": [
+      "node_modules"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}"
     ],

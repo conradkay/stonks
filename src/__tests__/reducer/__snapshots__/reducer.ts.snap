@@ -7,28 +7,6 @@ Object {
     1,
     1,
     1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
-    1,
   ],
   "cart": Array [
     Object {
@@ -40,6 +18,24 @@ Object {
       "name": "FREE REAL ESTATE",
       "pathToImage": "https://www.outdoorpainter.com/wp-content/uploads/2017/12/1.-SNOW-Handrahan.-Cold-Morning-Warm-Light-12x16.jpg",
       "price": 1015,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 650,
+        },
+        Object {
+          "date": "6 month",
+          "price": 1032,
+        },
+        Object {
+          "date": "3 months",
+          "price": 1243,
+        },
+        Object {
+          "date": "1 month",
+          "price": 3200,
+        },
+      ],
       "selected": false,
       "sellAmount": 1,
     },
@@ -53,6 +49,24 @@ Object {
       "name": "whiteboard",
       "pathToImage": "http://cdn.ebaumsworld.com/2015/05/14/043327/84584305/tumblr_mm16sq2gsb1rziftho1_1280.jpg",
       "price": 13,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 17,
+        },
+        Object {
+          "date": "6 month",
+          "price": 15,
+        },
+        Object {
+          "date": "3 months",
+          "price": 13.4,
+        },
+        Object {
+          "date": "1 month",
+          "price": 12,
+        },
+      ],
       "selected": false,
       "sellAmount": 1,
     },
@@ -64,6 +78,24 @@ Object {
       "name": "cheese stonk",
       "pathToImage": "https://skinnyms.com/wp-content/uploads/2012/03/Tuna-Casserole-1.jpg",
       "price": 115,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 170,
+        },
+        Object {
+          "date": "6 month",
+          "price": 150,
+        },
+        Object {
+          "date": "3 months",
+          "price": 130,
+        },
+        Object {
+          "date": "1 month",
+          "price": 120,
+        },
+      ],
       "selected": true,
       "sellAmount": 1,
     },
@@ -74,6 +106,24 @@ Object {
       "name": "floop",
       "pathToImage": "https://",
       "price": 101,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 170,
+        },
+        Object {
+          "date": "6 month",
+          "price": 150,
+        },
+        Object {
+          "date": "3 months",
+          "price": 130.4,
+        },
+        Object {
+          "date": "1 month",
+          "price": 120,
+        },
+      ],
       "selected": false,
       "sellAmount": 1,
     },
@@ -88,6 +138,24 @@ Object {
       "name": "FREE REAL ESTATE",
       "pathToImage": "https://www.outdoorpainter.com/wp-content/uploads/2017/12/1.-SNOW-Handrahan.-Cold-Morning-Warm-Light-12x16.jpg",
       "price": 1015,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 650,
+        },
+        Object {
+          "date": "6 month",
+          "price": 1032,
+        },
+        Object {
+          "date": "3 months",
+          "price": 1243,
+        },
+        Object {
+          "date": "1 month",
+          "price": 3200,
+        },
+      ],
       "selected": false,
       "sellAmount": 1,
     },
@@ -101,6 +169,24 @@ Object {
       "name": "whiteboard",
       "pathToImage": "http://cdn.ebaumsworld.com/2015/05/14/043327/84584305/tumblr_mm16sq2gsb1rziftho1_1280.jpg",
       "price": 13,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 17,
+        },
+        Object {
+          "date": "6 month",
+          "price": 15,
+        },
+        Object {
+          "date": "3 months",
+          "price": 13.4,
+        },
+        Object {
+          "date": "1 month",
+          "price": 12,
+        },
+      ],
       "selected": false,
       "sellAmount": 1,
     },
@@ -112,6 +198,24 @@ Object {
       "name": "cheese stonk",
       "pathToImage": "https://skinnyms.com/wp-content/uploads/2012/03/Tuna-Casserole-1.jpg",
       "price": 115,
+      "prices": Array [
+        Object {
+          "date": "1 year",
+          "price": 170,
+        },
+        Object {
+          "date": "6 month",
+          "price": 150,
+        },
+        Object {
+          "date": "3 months",
+          "price": 130,
+        },
+        Object {
+          "date": "1 month",
+          "price": 120,
+        },
+      ],
       "selected": true,
       "sellAmount": 1,
     },

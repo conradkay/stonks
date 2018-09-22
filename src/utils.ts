@@ -22,15 +22,15 @@ export const getClassSnackbarVariant = (variant: Variant, classes: { success: st
   else if (variant === 'error') { return classes.error }
   else { return classes.error }
 }
-export const generateOnes = (amount: number): number[] => { // generates some ones to put into state.shopAmounts
-  const arr = [1]
+export const generateNum = (amount: number, num: number): number[] => { // generates some ones to put into state.shopAmounts
+  const arr = [num]
   for (let i = 0; i < amount - 1; i++) {
-    arr.push(1)
+    arr.push(num)
   }
   return arr
 }
 export const defaultState: State = {
-  amountStonksShop: generateOnes(25), // This is SO sad
+  amountStonksShop: generateNum(stonks.length, 1), // This is SO sad
   cart: [
     ...stonks.slice(0, -1),
     { ...stonks[stonks.length - 1], selected: true }
@@ -44,6 +44,8 @@ export const defaultState: State = {
   snackbar: { open: false, message: 'dont show', variant: 'success' },
 }
 export const exampleStonk: Stonk = {
+  prices: [{ date: '1 year', price: 170 }, { date: '6 month', price: 150 }, { date: '3 months', price: 130.4 }, { date: '1 month', price: 120 }],
+
   amount: 2,
   id: 1,
   description: `floopderop`,

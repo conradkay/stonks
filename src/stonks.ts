@@ -1,16 +1,6 @@
 import { Stonk, Stonks } from './exports'
-let example: Stonk = {
-  pathToImage: '',
-  selected: false,
-  name: '',
-  price: 1,
-  sellAmount: 1,
-  id: 3,
-  description: ``,
-  amount: 1
-}
-example = example
 const whiteBoardStonk: Stonk = {
+  prices: [{ date: '1 year', price: 17 }, { date: '6 month', price: 15 }, { date: '3 months', price: 13.4 }, { date: '1 month', price: 12 }],
   pathToImage: 'http://cdn.ebaumsworld.com/2015/05/14/043327/84584305/tumblr_mm16sq2gsb1rziftho1_1280.jpg',
   selected: false,
   name: 'whiteboard',
@@ -24,6 +14,7 @@ const whiteBoardStonk: Stonk = {
   amount: 1
 }
 const freeRealEstateStonk: Stonk = {
+  prices: [{ date: '1 year', price: 650 }, { date: '6 month', price: 1032 }, { date: '3 months', price: 1243 }, { date: '1 month', price: 3200 }],
   pathToImage: 'https://www.outdoorpainter.com/wp-content/uploads/2017/12/1.-SNOW-Handrahan.-Cold-Morning-Warm-Light-12x16.jpg',
   id: 1,
   name: 'FREE REAL ESTATE',
@@ -36,6 +27,7 @@ const freeRealEstateStonk: Stonk = {
   when Fil fixes a bote with just tape wow man.`
 }
 const cheeseStonk: Stonk = {
+  prices: [{ date: '1 year', price: 170 }, { date: '6 month', price: 150 }, { date: '3 months', price: 130 }, { date: '1 month', price: 120 }],
   pathToImage: 'https://skinnyms.com/wp-content/uploads/2012/03/Tuna-Casserole-1.jpg',
   id: 2,
   sellAmount: 1,
