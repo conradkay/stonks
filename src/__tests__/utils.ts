@@ -18,12 +18,12 @@ describe('util functions', () => {
     // expect(getClassSnackbarVariant('hey', classes)).toBe('error') // works
   })
   it('generate ones :( such a sad function', () => {
-    expect(generateNum(10, 1)).toEqual([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+    expect(generateNum(stonks.length, 1)).toEqual([1, 1, 1])
   })
   it('defaultState', () => {
-    expect(defaultState.amountStonksShop.length).toBe(25)
+    expect(defaultState.amountStonksShop.length).toBe(stonks.length)
     expect(defaultState).toEqual({
-      amountStonksShop: generateNum(25, 1),
+      amountStonksShop: [1, 1, 1],
       cart: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
       inventory: [...stonks.slice(0, -1), { ...stonks[stonks.length - 1], selected: true }],
       activeFilters: [],
@@ -32,6 +32,6 @@ describe('util functions', () => {
     })
   })
   it('exampleStonk', () => {
-    expect(exampleStonk).toEqual({ amount: 2, id: 1, description: 'floopderop', price: 101, name: 'floop', pathToImage: 'https://', sellAmount: 1, selected: false })
+    expect(exampleStonk).toEqual({ amount: 2, id: 1, description: 'floopderop', price: 101, name: 'floop', pathToImage: 'https://', sellAmount: 1, selected: false, prices: exampleStonk.prices })
   })
 })

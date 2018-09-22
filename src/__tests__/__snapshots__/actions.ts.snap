@@ -11,6 +11,24 @@ Object {
     "name": "floop",
     "pathToImage": "https://",
     "price": 101,
+    "prices": Array [
+      Object {
+        "date": "1 year",
+        "price": 170,
+      },
+      Object {
+        "date": "6 month",
+        "price": 150,
+      },
+      Object {
+        "date": "3 months",
+        "price": 130.4,
+      },
+      Object {
+        "date": "1 month",
+        "price": 120,
+      },
+    ],
     "selected": false,
     "sellAmount": 1,
   },
