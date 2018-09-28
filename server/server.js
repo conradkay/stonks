@@ -3,6 +3,7 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 const app = express()
+
 mongoose.connect('mongodb://cokay101:cokay101@ds115753.mlab.com:15753/stonk', {useNewUrlParser: true})
 
 const stonkSchema = mongoose.Schema({
@@ -32,15 +33,25 @@ const Money = mongoose.model('money', moneySchema)
 
 // const urlencodedParser = bodyParser.urlencoded({ extended: true })
 const jsonParser = bodyParser.json()
-
+const deleteAndNew = (newData) => {
+  Cart.deleteMany({}, () => {})
+  Inventory.deleteMany({}, () => {})
+  Money.delete({}, () => {})
+  Cart.insertMany([...newData.cart])
+  Inventory.insertMany([...newData.inventory])
+  Money.insert([{money: newData.money}])
+}
 app.post('/stonk/sell-inventory', jsonParser, (req) => {
   console.log('Selling stonk in inventory')
+  deleteAndNew(req.body)
 })
 app.post('/stonk/buy-cart', jsonParser, (req) => {
   console.log('POSTING STONK CART SERVER')
+  deleteAndNew(req.body)
 })
 app.post('/stonk/add-to-cart', jsonParser, (req) => {
   console.log('ADDING A STONK TO CART IN DB SERVER')
+  deleteAndNew(req.body)
 })
 
 app.listen(5000)
