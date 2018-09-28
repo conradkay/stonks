@@ -3,7 +3,6 @@ const bodyParser = require('body-parser')
 const express = require('express')
 
 const app = express()
-
 mongoose.connect('mongodb://cokay101:cokay101@ds115753.mlab.com:15753/stonk', {useNewUrlParser: true})
 
 const stonkSchema = mongoose.Schema({
