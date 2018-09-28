@@ -14,7 +14,7 @@ const whiteBoardStonk: Stonk = {
   amount: 1
 }
 const freeRealEstateStonk: Stonk = {
-  prices: [{ date: '1 year', price: 650 }, { date: '6 month', price: 1032 }, { date: '3 months', price: 1243 }, { date: '1 month', price: 3200 }],
+  prices: [{ date: '1 year', price: 650 }, { date: '6 month', price: 1032 }, { date: '3 months', price: 1243 }, { date: '1 month', price: 200 }],
   pathToImage: 'https://www.outdoorpainter.com/wp-content/uploads/2017/12/1.-SNOW-Handrahan.-Cold-Morning-Warm-Light-12x16.jpg',
   id: 1,
   name: 'FREE REAL ESTATE',

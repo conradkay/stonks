@@ -39,7 +39,6 @@ export const defaultState: State = {
     ...stonks.slice(0, -1),
     { ...stonks[stonks.length - 1], selected: true }
   ],
-  activeFilters: [],
   money: 1000,
   snackbar: { open: false, message: 'dont show', variant: 'success' },
 }

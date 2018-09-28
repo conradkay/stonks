@@ -41,5 +41,4 @@ export interface State {
   readonly snackbar: SnackBar
   readonly inventory: Stonks
   readonly money: number
-  readonly activeFilters: string[]
 }

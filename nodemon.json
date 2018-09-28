@@ -1,0 +1,4 @@
+{
+  "watch": ["server/server.js", "server/", "client/", "package.json", "nodemon.json"],
+  "ext": "js, css, html, ts, tsx"
+}

@@ -1,5 +1,4 @@
 {
-  "parser": "typescript-eslint-parser",
   "env": {
     "browser": true,
     "es6": true,
@@ -7,9 +6,9 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended",
     "plugin:import/errors",
-    "plugin:import/warnings"
+    "plugin:import/warnings",
+    "plugin:node/recommended"
   ],
   "parserOptions": {
     "ecmaFeatures": {
@@ -23,11 +22,6 @@
     "typescript"
   ],
   "rules": {
-    "jest/no-disabled-tests": "warn",
-    "jest/no-focused-tests": "error",
-    "jest/no-identical-title": "error",
-    "jest/prefer-to-have-length": "warn",
-    "jest/valid-expect": "error",
     "no-unused-vars": "warn",
     "no-empty-pattern": "warn",
     "indent": [

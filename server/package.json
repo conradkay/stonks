@@ -1,0 +1,12 @@
+{
+  "name": "stonk",
+  "version": "0.3.0",
+  "homepage": "http://conradkay.github.io/stonk/",
+  "private": true,
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "eslint-plugin-react": "^7.11.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.17"
+  }
+}
