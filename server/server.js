@@ -17,6 +17,7 @@ const stonkSchema = mongoose.Schema({
   description: String,
   amount: String
 })
+
 const inventorySchema = mongoose.Schema({
   cart: [stonkSchema]
 })
