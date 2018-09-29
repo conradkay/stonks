@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import {
   Header, Footer, Dispatch, Stonk, State, Stonks,
-  selectAllInventory, unSelectAllInventory, selectStonkInInventory, sellStonks, withInput, withSnack
+  selectAllInventory, unSelectAllInventory, selectStonkInInventory  , withInput, withSnack
 } from '../exports'
 import {
   Theme, withStyles, WithStyles, createStyles, Paper, Table, TableBody, TableCell, TableRow, Checkbox, TextField, Button
@@ -91,7 +91,7 @@ const mapStateToProps = (state: State) => ({
   inventory: state.inventory
 })
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  sellStonks: () => dispatch(sellStonks()),
+  sellStonks: () => dispatch({type: 'SELL_STONK_INVENTORY'}),
   selectAllInventory: () => dispatch(selectAllInventory()),
   unSelectAllInventory: () => dispatch(unSelectAllInventory()),
   selectStonkInInventory: (index: number) => dispatch(selectStonkInInventory(index))

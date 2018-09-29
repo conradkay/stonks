@@ -5,9 +5,12 @@ import { Contact } from './contact/contact'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { createStore, applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { reducer, defaultState, Home, Cart, Shop, SnackbarWrap } from './exports'
-import thunk from 'redux-thunk'
-export const store = createStore(reducer, defaultState, composeWithDevTools(applyMiddleware(thunk)))
+import { reducer, defaultState, Home, Cart, Shop, SnackbarWrap, runAll } from './exports'
+import createSagaMiddleware from 'redux-saga'
+
+const sagaMiddleware = createSagaMiddleware()
+export const store = createStore(reducer, defaultState, composeWithDevTools(applyMiddleware(sagaMiddleware)))
+sagaMiddleware.run(runAll)
 
 const Wrapper = () => {
   return (

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {
-  Header, Footer, Dispatch, addToCart, Variant, Stonk, stonks, State, withInput, withSnack, generateNum
+  Header, Footer, Dispatch, Variant, Stonk, stonks, State, withInput, withSnack, generateNum
 } from '../exports'
 import {
   createStyles, withStyles, WithStyles, Theme, Button, Card, CardActionArea,
@@ -26,7 +26,7 @@ const styles = (theme: Theme) => createStyles({
 interface Props extends WithStyles<typeof styles> {
   handleChange: (index: number) => (event: any) => void
   openSnackbar: (message: string, variant: Variant) => void
-  addToCart: (stonk: Stonk, amount: number) => void
+  postStonksToCart: (stonk: Stonk, amount: number) => void
   state: State
   setValue: (index: number, amount: number) => void
 }
@@ -101,7 +101,7 @@ export class ShopComponent extends Component<Props, {values: number[]}> {
                      className={classes.textField}
                     />
                     <Button
-                      onClick={() => this.props.addToCart(stonk, state.amountStonksShop[stonks.indexOf(stonk)])}
+                      onClick={() => this.props.postStonksToCart(stonk, state.amountStonksShop[stonks.indexOf(stonk)])}
                       className={classes.button}
                       size="small"
                       color="primary"
@@ -121,7 +121,7 @@ const mapStateToProps = (state: State) => ({
   state: state
 })
 const mapDispatchToProps = (dispatch: Dispatch) => ({
-  addToCart: (stonk: Stonk, amount: number) => dispatch(addToCart(stonk, amount))
+  postStonksToCart: (stonk: Stonk, amount: number) => dispatch({type: 'POST_STONK_TO_CART', stonk, amount})
 })
 
 export const Shop = connect(

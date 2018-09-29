@@ -4,7 +4,7 @@ import { Title } from './tableTitle'
 import {
   State, Dispatch, Header, Footer,
   Stonk, selectStonkInCart, removeStonk, selectAllCart,
-  unSelectAllCart, buyStonks, withInput, withSnack
+  unSelectAllCart, withInput, withSnack
 } from '../exports'
 import {
   TextField, Paper, Theme, TableBody, withStyles, WithStyles,
@@ -31,6 +31,7 @@ interface Props extends WithStyles<typeof styles> {
   selectAllCart: () => void
   unSelectAllCart: () => void
   cart: Stonk[]
+  buyStonkCartToInventory: () => void
 }
 /*@CartComponent React Component
 * @Type: React Class Component; Root
@@ -83,7 +84,7 @@ export class CartComponent extends Component<Props> {
             </TableBody>
           </Table>
         </Paper>
-        <Button className={classes.button} onClick={this.props.buyStonks} variant="contained" color="secondary">
+        <Button className={classes.button} onClick={this.props.buyStonkCartToInventory} variant="contained" color="secondary">
           Buy stonks
         </Button>
         <Footer />
@@ -100,7 +101,7 @@ const mapDispatchToProps = (dispatch: Dispatch) => ({
   removeStonk: (id: number) => dispatch(removeStonk(id)),
   selectAllCart: () => dispatch(selectAllCart()),
   unSelectAllCart: () => dispatch(unSelectAllCart()),
-  buyStonks: () => dispatch(buyStonks()),
+  buyStonkCartToInventory: () => dispatch({type: 'BUY_STONK_CART_TO_INVENTORY'})
 })
 export const Cart = connect(
   mapStateToProps, mapDispatchToProps
