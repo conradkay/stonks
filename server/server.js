@@ -27,20 +27,27 @@ const cartSchema = mongoose.Schema({
 const moneySchema = mongoose.Schema({
   money: Number
 })
-const Cart = mongoose.model('cartStonk', inventorySchema)
-const Inventory = mongoose.model('inventoryStonk', cartSchema)
-const Money = mongoose.model('money', moneySchema)
 
-// const urlencodedParser = bodyParser.urlencoded({ extended: true })
+const Cart = mongoose.model('cartItem', stonkSchema)
+const Inventory = mongoose.model('inventoryItem', stonkSchema)
+const Money = mongoose.model('singleMoney', moneySchema)
 const jsonParser = bodyParser.json()
+
 const deleteAndNew = (newData) => {
   Cart.deleteMany({}, () => {})
   Inventory.deleteMany({}, () => {})
-  Money.delete({}, () => {})
-  Cart.insertMany([...newData.cart])
-  Inventory.insertMany([...newData.inventory])
-  Money.insert([{money: newData.money}])
+  Money.deleteMany({}, () => {})
+  newData.cart.map(stonk => {
+    Cart.create(stonk)
+  })
+  newData.inventory.map(stonk => {
+    Inventory.create(stonk)
+  })
+  Money.create({money: newData.money})
 }
+app.get('/state', (req) => {
+  
+})
 app.post('/stonk/sell-inventory', jsonParser, (req) => {
   console.log('Selling stonk in inventory')
   deleteAndNew(req.body)

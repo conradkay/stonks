@@ -1,5 +1,6 @@
 export type Action = Readonly<{ type: 'ADD_TO_CART'; stonk: Stonk; id: number; amount: number }
   | { type: 'BUY_STONKS' }
+  // is a saga and testing action OOPS, scalability bitches
   | { type: 'SET_STATE_TEST'; newState: State }
   | { type: 'SELL_STONKS' }
   | { type: 'CHANGE_AMOUNT_SHOP'; index: number; amount: number }
@@ -14,7 +15,11 @@ export type Action = Readonly<{ type: 'ADD_TO_CART'; stonk: Stonk; id: number; a
   | { type: 'REMOVE_STONK'; index: number }
   | { type: 'OPEN_SNACKBAR'; message: string; variant: Variant }
   | { type: 'CLOSE_SNACKBAR' }
-  | { type: 'RESET' }>
+  | { type: 'RESET' }
+  // saga actions
+  | { type: 'POST_STONK_TO_CART', stonk: Stonk, amount: number }
+  | { type: 'BUY_STONK_CART_TO_INVENTORY' }
+  | { type: 'SELL_STONK_INVENTORY' }>
 export { Dispatch } from 'redux'
 export interface Stonk {
   readonly prices: Array<{ date: string; price: number }>
